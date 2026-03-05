@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YadeCare</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 ">
+
+  <!-- HERO WRAPPER (header is OVER hero) -->
+  <section id = "home" class="relative min-h-screen flex items-center overflow-hidden">
+
+    <!-- Background Video -->
+    <div class="absolute inset-0 z-0">
+    <video autoplay muted loop playsinline class="absolute insert-0 w-full h-full object-cover" preload="auto">
+      <source src="assets/video/herovid.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay za bolji kontrast -->
+    <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+    <!-- HEADER OVER HERO (Topbar + Thin Navbar) -->
+    <header class="fixed top-0 left-0 w-full z-50">
+
+      
+
+      <!-- MAIN NAV (straight white bar like on your screenshot) -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200/60">
+    <div class="max-w-[1700px] mx-auto px-8 h-20 flex items-center">
+
+    <!-- Logo (left) -->
+    <a href="#home" class="flex items-center gap-3 pt-6 ">
+      <img src="assets/img/logy.png" class="h-36 w-auto object-contain" alt="YadeCare">
+      
+    </a>
+
+    <!-- Center menu -->
+    <div class="hidden md:flex flex-1 justify-center">
+      <div class="flex items-center gap-10 text-gray-700 font-medium">
+        <a href="#home" class="hover:text-teal-600 transition">Start</a>
+        <a href="#leistungen" class="hover:text-teal-600 transition">Leistungen</a>
+        <a href="#uber-uns" class="hover:text-teal-600 transition">Über uns</a>
+        <a href="#kontakt" class="hover:text-teal-600 transition">Kontakt</a>
+      </div>
+    </div>
+
+    <!-- Right spacer (da centriranje ostane tačno i kad nema CTA) -->
+    <div class="hidden md:block w-[140px]"></div>
+
+  </div>
+</nav>
+
+    </header>
+
+    <!-- HERO CONTENT -->
+    <div class="relative z-20 w-full ">
+      <div class="max-w-7xl mx-auto px-8 pt-80">
+        <div class="grid md:grid-cols-2 gap-12 text-white">
+
+          <!-- Left Side -->
+          <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+              Yade Care  
+            </h1>
+
+            <p class="text-xl md:text-2xl font-semibold leading-relaxed max-w-xl text-gray-200 mb-8">
+              Individuelle Unterstützung von der Grundpflege
+              bis zur hauswirtschaftlichen Versorgung.
+            </p>
+
+            <a href="#kontakt"
+               class="inline-block bg-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">
+              Jetzt Beratung anfragen
+            </a>
+          </div>
+
+          <!-- Right Side Benefits -->
+          <div class="space-y-6 text-lg hidden md:block">
+
+            <div class="flex items-center space-x-4">
+              <span class="text-teal-300 text-2xl font-bold">✔</span>
+              <span class="font-semibold">Alle Krankenkassen anerkannt</span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <span class="text-teal-300 text-2xl">✔</span>
+              <span class="font-semibold">Kostenlose Pflegeberatung</span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <span class="text-teal-300 text-2xl">✔</span>
+              <span class="font-semibold">Kurzfristiger Pflegebeginn möglich</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- LEISTUNGEN -->
+<section id="leistungen" class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- NASLOV -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800">
+                Unsere Leistungen
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                
+                Kompetente Pflege zu Hause – in vertrauter Umgebung
+            </p>
+        </div>
+
+        <!-- 1 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <img src="assets/img/leistung.jpg"
+                 class="rounded-2xl shadow-xl w-full h-[400px] object-cover">
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-teal-700">
+                    
+                    Kompetente Pflege zu Hause – in vertrauter Umgebung
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    
+                    Der ambulante Pflegedienst YadeCare aus München bietet Ihnen eine liebevolle und fachkundige Pflege direkt in den eigenen vier Wänden.
+                    Unser Ziel ist es, pflegebedürftigen Menschen ein Leben in ihrer gewohnten Umgebung zu ermöglichen – mit Würde, Sicherheit und Geborgenheit.
+
+                    Ganz gleich, ob nach einem Krankenhausaufenthalt, einer Rehabilitationsphase oder aufgrund altersbedingter Einschränkungen:
+                    Als kompetenter ambulanter Pflegedienst in München entwickeln wir gemeinsam mit Ihnen individuelle Pflegekonzepte, 
+                    die optimal auf Ihre persönlichen Bedürfnisse abgestimmt sind.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2 (OBRNUTO) -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-semibold mb-4 text-teal-700">
+                    Persönlich, Vertrauensvoll und Professionell.
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Persönlich, Vertrauensvoll und Professionell.
+                    Als Gast in Ihrem Zuhause legen wir größten Wert auf Respekt und den Schutz Ihrer Privatsphäre. Unser Anliegen ist es, eine vertrauensvolle Atmosphäre zu schaffen, in der Sie sich rundum wohlfühlen können.
+
+                    Darüber hinaus bieten wir Ihnen durch unser erfahrenes Fachpersonal einen kostenfreien und umfangreichen Service an:
+                    Neben der pflegerischen Versorgung übernehmen wir auf Wunsch auch sämtliche organisatorischen Aufgaben – von der Kommunikation mit Ämtern und Pflegekassen bis hin zur Abwicklung mit Krankenkassen oder anderen Behörden.
+
+                    So stellen wir als ambulanter Pflegedienst München YadeCare sicher, dass Sie oder Ihre Angehörigen eine ganzheitliche Betreuung und bestmögliche Pflege in jeder Hinsicht erhalten.
+                </p>
+            </div>
+
+            <img src="assets/img/leis3.jpeg"
+                 class="order-1 md:order-2 rounded-2xl shadow-xl w-full h-[400px] object-cover">
+        </div>
+
+        <!-- 3 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <img src="assets/img/leist2.jpg"
+                 class="rounded-2xl shadow-xl w-full h-[400px] object-cover">
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-teal-700">
+                    Pflege ist nicht nur eine Pflicht, sie ist ein Teil von uns.
+
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Bei Ambulanter Pflegedienst YadeCare verstehen wir Pflege nicht nur als Verpflichtung, sondern als einen wesentlichen Bestandteil unseres täglichen Handelns.
+
+                    Unsere Arbeit ist geprägt von Empathie, Respekt und fachlicher Kompetenz, mit dem Ziel, jedem einzelnen Klienten die bestmögliche Betreuung zu bieten.
+
+                    Wir nehmen uns Zeit, um die individuellen Bedürfnisse und Lebenssituationen unserer Patientinnen und Patienten genau zu verstehen.
+
+                    So können wir eine Pflege gewährleisten, die nicht nur professionell, sondern auch menschlich und persönlich ist.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4 (OBRNUTO) -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20 mb-20">
+            
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-semibold mb-4 text-teal-700">
+                    Kostenlose Pflegeberatung sowie Beratung gemäß § 37 SGB V
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Gegenstand des Unternehmens ist der Betrieb eines ambulanten Pflegedienstes.
+                     Die Gesellschaft erbringt Leistungen der häuslichen Krankenpflege gemäß § 37 SGB V,
+                      Pflegeleistungen nach dem SGB XI, 24-Stunden-Pflege und -Betreuung im häuslichen Umfeld,
+                       Betreuungs- und Entlastungsleistungen, hauswirtschaftliche Versorgung sowie Assistenz- und Unterstützungsleistungen für hilfs- und pflegebedürftige Personen.
+                        Darüber hinaus bietet die Gesellschaft Beratungsleistungen für Pflegebedürftige und deren Angehörige an.
+                </p>
+            </div>
+
+            <img src="assets/img/leis4.jpg"
+                 class="order-1 md:order-2 rounded-2xl shadow-xl w-full h-[400px] object-cover">
+        </div>
+
+    </div>
+</section>
+
+<!-- Über Uns -->
+<section id="uber-uns" class="bg-teal-100 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- TEKST -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-700 mb-6">
+                    Über uns
+                </h2>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Die YadeCare GmbH ist ein ambulanter Pflegedienst mit Sitz in München. Unser Ziel ist es, pflegebedürftigen Menschen eine professionelle, zuverlässige und zugleich menschliche Betreuung in ihrem eigenen Zuhause zu ermöglichen.
+
+Unser erfahrenes Team aus qualifizierten Pflegekräften unterstützt unsere Patientinnen und Patienten individuell und mit viel Einfühlungsvermögen im Alltag. Dabei legen wir großen Wert auf Respekt, Würde und Vertrauen.
+
+Zu unseren Leistungen gehören unter anderem die häusliche Krankenpflege gemäß § 37 SGB V, Pflegeleistungen nach SGB XI, Unterstützung im Alltag sowie Beratungs- und Betreuungsleistungen für pflegebedürftige Menschen und ihre Angehörigen.
+
+Als ambulanter Pflegedienst möchten wir dazu beitragen, dass unsere Patientinnen und Patienten möglichst lange selbstständig und sicher in ihrer vertrauten Umgebung leben können.
+
+Die Zufriedenheit und das Wohlbefinden unserer Patientinnen und Patienten stehen für uns an erster Stelle.
+                </p>
+            </div>
+
+            <!-- SLIKA -->
+            <div>
+                <img src="assets/img/map.png" class="w-full object-contain">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="bg-white-100 py-24">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center text-teal-700 mb-16">
+
+24h Bereitschaftsdienst – Sofortige Beratung für Pflege & Betreuung
+</h2>
+
+<div class="grid md:grid-cols-2 gap-12 items-start">
+
+<!-- LEFT INFO -->
+<div class="space-y-8">
+
+<div class="flex items-start gap-4">
+<div class="text-teal-700 text-2xl">📞</div>
+<div>
+<h4 class="font-semibold text-lg">Telefon</h4>
+<p class="text-gray-600">089 / 45151550</p>
+</div>
+</div>
+
+<div class="flex items-start gap-4">
+<div class="text-teal-700 text-2xl">✉️</div>
+<div>
+<h4 class="font-semibold text-lg">Email</h4>
+<p class="text-gray-600">info@yadecare.de</p>
+</div>
+</div>
+
+<div class="flex items-start gap-4">
+<div class="text-teal-700 text-2xl">📍</div>
+<div>
+<h4 class="font-semibold text-lg">Adresse</h4>
+<p class="text-gray-600">
+München, Deutschland
+</p>
+</div>
+</div>
+
+<div class="bg-teal-700 text-white p-6 rounded-xl mt-10">
+<h4 class="font-semibold text-lg mb-2">24h Bereitschaftsdienst</h4>
+<p class="text-sm">
+    Wir sind rund um die Uhr für Sie erreichbar und beraten Sie gerne zu unseren Pflegeleistungen.
+</p>
+</div>
+
+</div>
+
+<!-- RIGHT FORM -->
+<div class="bg-white p-10 rounded-2xl shadow-lg">
+
+<form action="https://formspree.io/f/mgonwken" method="POST" class="space-y-6">
+
+<input 
+type="text"
+name="name"
+placeholder="Ihr Name"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-600 outline-none"
+required>
+
+<input 
+type="email"
+name="email"
+placeholder="Ihre Email"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-600 outline-none"
+required>
+
+<textarea 
+name="message"
+rows="5"
+placeholder="Ihre Nachricht"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-teal-600 outline-none"
+required></textarea>
+
+<button 
+type="submit"
+class="w-full bg-teal-700 text-white py-3 rounded-lg font-semibold hover:bg-teal-800 transition">
+Nachricht senden
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="bg-teal-700 text-white mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+
+        <!-- Firma -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">YadeCare</h3>
+            <p class="text-sm leading-relaxed">
+                Ambulanter Pflegedienst mit Sitz in München. 
+                Wir unterstützen Menschen im Alltag mit professioneller 
+                und liebevoller Pflege direkt zu Hause.
+            </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Navigation</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#home" class="hover:underline">Startseite</a></li>
+                <li><a href="#uberuns" class="hover:underline">Über uns</a></li>
+                <li><a href="#leistungen" class="hover:underline">Leistungen</a></li>
+                <li><a href="#kontakt" class="hover:underline">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <!-- Kontakt -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Kontakt</h3>
+            <p class="text-sm">📍 München, Deutschland</p>
+            <p class="text-sm mt-2">📞 +49 123 456789</p>
+            <p class="text-sm mt-2">✉ info@yade-care.de</p>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-teal-600 text-center text-sm py-4">
+        © 2026 YadeCare – Alle Rechte vorbehalten
+    </div>
+</footer>
+</body>
+</html>
