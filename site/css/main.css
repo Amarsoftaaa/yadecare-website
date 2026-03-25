@@ -1,0 +1,135 @@
+/* main.css — Global CSS variables, base typography, shared utilities,
+   and scroll-in animation classes used across all sections. */
+
+/* ── Google Fonts are loaded via index.html ────────────────────────── */
+
+/* ============================================================
+   BASE
+============================================================ */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+:root {
+  --primary:       #1a7a6e;
+  --primary-dark:  #0d4f46;
+  --primary-deep:  #062e28;
+  --accent:        #b2f0e8;
+  --bg-light:      #e8faf7;
+  --white:         #ffffff;
+  --text-dark:     #1a2e2b;
+  --text-muted:    #4a6460;
+  --shadow-xs:     0 2px 8px  rgba(26,122,110,0.07);
+  --shadow-sm:     0 4px 20px rgba(26,122,110,0.10);
+  --shadow-md:     0 8px 36px rgba(26,122,110,0.16);
+  --shadow-lg:     0 20px 64px rgba(26,122,110,0.20);
+  --radius:        16px;
+  --radius-sm:     10px;
+  --ease:          cubic-bezier(0.4,0,0.2,1);
+  --dur:           0.35s;
+}
+
+/* ============================================================
+   SECTION TYPOGRAPHY — DM Sans + DM Serif for non-hero sections
+============================================================ */
+#ueber-uns,
+#team,
+#rezensionen,
+#kontakt,
+footer {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+#ueber-uns h2, #ueber-uns h3, #ueber-uns h4,
+#team h2, #team h3, #team h4,
+#rezensionen h2, #rezensionen h3,
+#kontakt h2, #kontakt h3,
+footer h3, footer h4 {
+  font-family: 'DM Serif Display', serif;
+  line-height: 1.15;
+  color: var(--text-dark);
+}
+
+#ueber-uns h2, #team h2, #rezensionen h2, #kontakt h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+}
+
+#ueber-uns h3, #team h3, #kontakt h3 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+/* ============================================================
+   SCROLL-IN ANIMATIONS
+============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.10s; }
+.d2 { transition-delay: 0.20s; }
+.d3 { transition-delay: 0.30s; }
+.d4 { transition-delay: 0.40s; }
+.d5 { transition-delay: 0.50s; }
+
+/* ============================================================
+   SHARED LAYOUT
+============================================================ */
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ── Pill label ─────────────────────────────── */
+.pill {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--accent);
+  padding: 5px 15px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+/* ── Section heading block ──────────────────── */
+.section-hd { margin-bottom: 56px; }
+.section-hd.centered { text-align: center; }
+.section-hd h2 { margin-top: 0.3rem; }
+.section-hd p {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+.section-hd.centered p { margin-left: auto; margin-right: auto; }
+
+/* ── Button ─────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  padding: 15px 32px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease),
+              background var(--dur) var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-teal  { background: var(--primary); color: var(--white); }
+.btn-teal:hover { background: var(--primary-dark); box-shadow: var(--shadow-md); }

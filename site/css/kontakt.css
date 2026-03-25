@@ -1,0 +1,121 @@
+/* kontakt.css — Contact section: heading, two-column grid, contact
+   info items, 24h box, form fields, and success message. */
+
+#kontakt { padding: 108px 0; background: var(--white); }
+
+/* ── Section heading ────────────────────────── */
+.kontakt-hd { text-align: center; margin-bottom: 68px; }
+.kontakt-hd h2 { color: var(--primary); max-width: 680px; margin: 0.4rem auto 0.8rem; }
+.kontakt-hd p  { color: var(--text-muted); }
+
+/* ── Two-column layout ──────────────────────── */
+.kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+/* ── Contact info column ────────────────────── */
+.contact-col h3 { color: var(--primary); margin-bottom: 1.6rem; }
+
+.cinfo-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 1.3rem; }
+
+.cinfo-icon {
+  width: 46px; height: 46px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.cinfo-text strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.cinfo-text a,
+.cinfo-text span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color var(--dur) var(--ease);
+  text-decoration: none;
+}
+.cinfo-text a:hover { color: var(--primary); }
+
+/* 24h availability box */
+.box-24 {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-top: 28px;
+}
+.box-24 h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 0.45rem;
+}
+.box-24 p { font-size: 0.9rem; color: rgba(255,255,255,0.78); }
+
+/* ── Contact form ───────────────────────────── */
+.contact-form { background: var(--bg-light); border-radius: 22px; padding: 42px 38px; }
+.contact-form h3 { color: var(--primary); margin-bottom: 1.6rem; }
+
+.form-row { margin-bottom: 20px; }
+.form-row label {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+  letter-spacing: 0.04em;
+}
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid rgba(178,240,232,0.8);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(26,122,110,0.1);
+}
+.form-row textarea { height: 130px; }
+
+/* Full-width submit button inside the form */
+#contactForm .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  background: rgba(26,122,110,0.1);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  #kontakt      { padding: 76px 0; }
+  .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form { padding: 28px 22px; }
+}

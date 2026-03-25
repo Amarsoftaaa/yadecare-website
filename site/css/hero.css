@@ -1,0 +1,8 @@
+/* hero.css — Full-screen hero section with video background.
+   Tailwind utility classes handle layout and colour; this file
+   contains only custom overrides that Tailwind cannot express. */
+
+/* Ensure the video overlay gradient reads correctly on all browsers */
+#home .hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.80), rgba(0,0,0,0.40), transparent);
+}

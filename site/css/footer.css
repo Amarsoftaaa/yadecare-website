@@ -1,0 +1,100 @@
+/* footer.css — Dark footer with logo, navigation columns, contact
+   details, and legal links. */
+
+footer {
+  background: var(--text-dark);
+  padding: 72px 0 36px;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+/* ── Three-column grid ──────────────────────── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 52px;
+  padding-bottom: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ── Logo / brand column ────────────────────── */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.35rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.logo-box {
+  width: 40px; height: 40px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.52);
+  max-width: 272px;
+  line-height: 1.7;
+}
+
+/* ── Link columns ───────────────────────────── */
+.footer-col h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 1.2rem;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.68);
+  padding: 4px 0;
+  transition: color var(--dur) var(--ease);
+  text-decoration: none;
+}
+.footer-col a:hover { color: var(--accent); }
+
+.footer-col span {
+  display: block;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.5);
+  padding: 4px 0;
+}
+
+/* ── Bottom bar ─────────────────────────────── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.36);
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.36);
+  transition: color var(--dur) var(--ease);
+  text-decoration: none;
+}
+.footer-bottom a:hover { color: var(--accent); }
+
+.footer-legal { display: flex; gap: 20px; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-grid   { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}

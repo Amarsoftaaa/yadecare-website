@@ -1,0 +1,101 @@
+/* rezensionen.css — Reviews / Rezensionen section: dark gradient
+   background, carousel track, review cards, star ratings, and
+   navigation dots. */
+
+#rezensionen {
+  padding: 108px 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 60%, var(--primary-deep) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative blobs */
+#rezensionen::before {
+  content: '';
+  position: absolute;
+  width: 540px; height: 540px;
+  border-radius: 50%;
+  background: rgba(178,240,232,0.06);
+  top: -160px; right: -160px;
+  pointer-events: none;
+}
+#rezensionen::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  bottom: -80px; left: 10%;
+  pointer-events: none;
+}
+
+/* ── Section heading ────────────────────────── */
+.rez-hd { text-align: center; margin-bottom: 56px; }
+.rez-hd .pill { background: rgba(178,240,232,0.18); color: var(--accent); }
+.rez-hd h2    { color: var(--white); margin-top: 0.3rem; }
+.rez-hd p     { color: rgba(255,255,255,0.68); margin-top: 0.5rem; }
+
+/* ── Carousel ───────────────────────────────── */
+.carousel-wrap  { position: relative; overflow: hidden; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+.review-slide { min-width: 100%; padding: 0 20px; }
+
+.review-box {
+  max-width: 740px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 22px;
+  padding: 50px 44px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 1.4rem;
+  color: #fbbf24;
+}
+
+.review-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+
+.review-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Dot navigation ─────────────────────────── */
+.dots { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
+
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.28);
+  border: none;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), width var(--dur) var(--ease);
+}
+.dot.active { background: var(--white); width: 28px; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  #rezensionen { padding: 76px 0; }
+  .review-box  { padding: 32px 24px; }
+}

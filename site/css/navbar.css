@@ -1,0 +1,8 @@
+/* navbar.css — Fixed top navigation bar styles.
+   Tailwind utility classes handle most layout; this file adds
+   any custom overrides beyond what Tailwind provides. */
+
+/* Active nav link highlight */
+header nav a.nav-active {
+  color: #0d9488; /* teal-600 */
+}
