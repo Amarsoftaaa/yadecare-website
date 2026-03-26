@@ -1,8 +1,144 @@
-/* hero.css — Full-screen hero section with video background.
-   Tailwind utility classes handle layout and colour; this file
-   contains only custom overrides that Tailwind cannot express. */
+/* hero.css — Full-screen hero section with video background,
+   gradient overlay, headline, and feature bullets. */
 
-/* Ensure the video overlay gradient reads correctly on all browsers */
-#home .hero-overlay {
-  background: linear-gradient(to right, rgba(0,0,0,0.80), rgba(0,0,0,0.40), transparent);
+/* ── Section layout ─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* push content below the fixed navbar */
+  padding-top: var(--nav-h);
+}
+
+/* ── Background layers ──────────────────────────────────────── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* strong on the left so text is always legible; fades out right */
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.82) 0%,
+    rgba(0,0,0,0.50) 45%,
+    rgba(0,0,0,0.15) 75%,
+    rgba(0,0,0,0.05) 100%
+  );
+}
+
+/* ── Two-column content grid ────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+/* ── Left column: headline + CTA ────────────────────────────── */
+.hero-text {
+  color: var(--white);
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.84);
+  max-width: 480px;
+  margin: 0 0 2.2rem;
+}
+
+.hero-cta {
+  font-size: 1rem;
+  padding: 17px 38px;
+  box-shadow: 0 6px 28px rgba(26,122,110,0.40);
+}
+
+.hero-cta:hover {
+  box-shadow: 0 10px 36px rgba(26,122,110,0.52);
+}
+
+/* ── Right column: feature bullets ─────────────────────────── */
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+}
+
+.hero-check {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(178,240,232,0.18);
+  border: 1.5px solid rgba(178,240,232,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hero-features {
+    display: none; /* clean single-column on mobile */
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding-top: 24px;
+    padding-bottom: 60px;
+  }
 }

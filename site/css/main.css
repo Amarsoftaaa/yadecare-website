@@ -4,10 +4,28 @@
 /* ── Google Fonts are loaded via index.html ────────────────────────── */
 
 /* ============================================================
-   BASE
+   BASE RESET & ROOT
 ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  color: #1a2e2b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
 }
 
 /* ============================================================
@@ -30,13 +48,16 @@ body {
   --radius-sm:     10px;
   --ease:          cubic-bezier(0.4,0,0.2,1);
   --dur:           0.35s;
+  --nav-h:         72px; /* navbar height — used by sections for offset */
 }
 
 /* ============================================================
-   SECTION TYPOGRAPHY — DM Sans + DM Serif for non-hero sections
+   SECTION TYPOGRAPHY — DM Serif Display for headings everywhere
 ============================================================ */
+#leistungen,
 #ueber-uns,
 #team,
+#md-note,
 #rezensionen,
 #kontakt,
 footer {
@@ -44,21 +65,29 @@ footer {
   line-height: 1.7;
 }
 
-#ueber-uns h2, #ueber-uns h3, #ueber-uns h4,
-#team h2, #team h3, #team h4,
+#leistungen h2, #leistungen h3,
+#ueber-uns  h2, #ueber-uns  h3, #ueber-uns  h4,
+#team       h2, #team       h3, #team       h4,
+#md-note    h2, #md-note    h3,
 #rezensionen h2, #rezensionen h3,
-#kontakt h2, #kontakt h3,
+#kontakt    h2, #kontakt    h3,
 footer h3, footer h4 {
   font-family: 'DM Serif Display', serif;
   line-height: 1.15;
   color: var(--text-dark);
 }
 
-#ueber-uns h2, #team h2, #rezensionen h2, #kontakt h2 {
+#leistungen h2,
+#ueber-uns  h2,
+#team       h2,
+#rezensionen h2,
+#kontakt    h2 {
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
 }
 
-#ueber-uns h3, #team h3, #kontakt h3 {
+#ueber-uns  h3,
+#team       h3,
+#kontakt    h3 {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
 }
 
@@ -126,6 +155,7 @@ footer h3, footer h4 {
   border-radius: 100px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: transform var(--dur) var(--ease),
               box-shadow var(--dur) var(--ease),
               background var(--dur) var(--ease);
@@ -133,3 +163,6 @@ footer h3, footer h4 {
 .btn:hover { transform: translateY(-2px); }
 .btn-teal  { background: var(--primary); color: var(--white); }
 .btn-teal:hover { background: var(--primary-dark); box-shadow: var(--shadow-md); }
+
+/* Body scroll lock when mobile nav is open */
+body.nav-body-lock { overflow: hidden; }

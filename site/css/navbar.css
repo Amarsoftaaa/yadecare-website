@@ -1,8 +1,194 @@
-/* navbar.css — Fixed top navigation bar styles.
-   Tailwind utility classes handle most layout; this file adds
-   any custom overrides beyond what Tailwind provides. */
+/* navbar.css — Fixed top navigation bar with desktop links and
+   mobile hamburger menu. */
 
-/* Active nav link highlight */
-header nav a.nav-active {
-  color: #0d9488; /* teal-600 */
+/* ── Fixed bar ──────────────────────────────────────────────── */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(178, 240, 232, 0.45);
+  box-shadow: 0 2px 16px rgba(26,122,110,0.06);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  /* overflow must be visible so the oversized logo can spill below */
+  overflow: visible;
+}
+
+/* Deeper shadow once user scrolls */
+.navbar.scrolled {
+  box-shadow: 0 4px 28px rgba(26,122,110,0.13);
+}
+
+/* ── Inner flex row ─────────────────────────────────────────── */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+  position: relative;
+}
+
+/* ── Logo ───────────────────────────────────────────────────── */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  /* push logo up so it breathes above the bar */
+  padding-top: 18px;
+  text-decoration: none;
+  /* ensure logo stacks above mobile menu overlay */
+  position: relative;
+  z-index: 2;
+}
+
+.logo-img {
+  height: 112px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Desktop nav links ──────────────────────────────────────── */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  /* horizontally centred inside the bar */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li {
+  display: flex;
+}
+
+.nav-links li a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color var(--dur) var(--ease),
+              border-bottom-color var(--dur) var(--ease);
+  white-space: nowrap;
+}
+
+.nav-links li a:hover,
+.nav-links li a.nav-active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ── Hamburger button (hidden on desktop) ───────────────────── */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  transition: background var(--dur) var(--ease);
+}
+
+.nav-burger:hover,
+.nav-burger:focus-visible {
+  background: var(--bg-light);
+  outline: none;
+}
+
+.burger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1),
+              opacity   0.32s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Animate three lines into an X when open */
+.nav-burger.is-open .burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-burger.is-open .burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-burger.is-open .burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile breakpoint ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-burger { display: flex; }
+
+  .nav-links {
+    /* reset desktop centring */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transform: none;
+
+    /* stack vertically */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    /* slide-down reveal */
+    background: var(--white);
+    border-bottom: 1px solid rgba(178,240,232,0.5);
+    box-shadow: 0 12px 32px rgba(26,122,110,0.12);
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1),
+                padding   0.3s ease;
+  }
+
+  .nav-links.nav-open {
+    max-height: 420px;
+    padding: 8px 0 16px;
+  }
+
+  .nav-links li {
+    display: block;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px 28px;
+    border-bottom: none;
+    font-size: 1rem;
+  }
+
+  .nav-links li a:hover {
+    background: var(--bg-light);
+    border-bottom: none;
+  }
+
+  .nav-links li a.nav-active {
+    color: var(--primary);
+    background: var(--bg-light);
+    border-bottom: none;
+  }
 }

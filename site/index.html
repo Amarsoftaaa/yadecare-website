@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YadeCare</title>
-
-  <!-- Tailwind (used by Hero + Leistungen sections) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>YadeCare &mdash; Ihr Pflegedienst in M&uuml;nchen</title>
+  <meta name="description" content="YadeCare GmbH &mdash; ambulanter Pflegedienst in M&uuml;nchen. Professionelle, herzliche Pflege zu Hause. MD-Note 1,0." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets — main.css must come first (defines tokens used by all others) -->
   <link rel="stylesheet" href="css/main.css" />
@@ -25,169 +23,159 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 
-<body class="bg-white text-gray-800">
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════════ -->
+  <header id="site-header">
+    <nav class="navbar" id="navbar">
+      <div class="wrap nav-inner">
+
+        <!-- Logo -->
+        <a href="#home" class="nav-logo" aria-label="YadeCare &mdash; zur Startseite">
+          <img src="assets/img/logy.png" class="logo-img" alt="YadeCare" />
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#home">Start</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber-uns">&Uuml;ber uns</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#rezensionen">Rezensionen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-burger" id="navBurger"
+                aria-label="Men&uuml; &ouml;ffnen"
+                aria-expanded="false"
+                aria-controls="navLinks">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
 
 
   <!-- ════════════════════════════════════════════════
        HERO  (video background)
   ════════════════════════════════════════════════ -->
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <section id="home" class="hero">
 
-    <!-- Background Video -->
-    <div class="absolute inset-0 z-0">
-      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" preload="auto">
+    <!-- Background video -->
+    <div class="hero-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline class="hero-video" preload="auto">
         <source src="assets/video/herovid.mp4" type="video/mp4">
       </video>
-      <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+      <div class="hero-overlay"></div>
     </div>
-
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50">
-      <nav class="bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200/60">
-        <div class="max-w-[1700px] mx-auto px-8 h-20 flex items-center">
-
-          <!-- Logo -->
-          <a href="#home" class="flex items-center gap-3 pt-6">
-            <img src="assets/img/logy.png" class="h-36 w-auto object-contain" alt="YadeCare">
-          </a>
-
-          <!-- Centre navigation -->
-          <div class="hidden md:flex flex-1 justify-center">
-            <div class="flex items-center gap-8 text-gray-700 font-medium">
-              <a href="#home"        class="hover:text-teal-600 transition">Start</a>
-              <a href="#leistungen"  class="hover:text-teal-600 transition">Leistungen</a>
-              <a href="#ueber-uns"   class="hover:text-teal-600 transition">&#220;ber uns</a>
-              <a href="#team"        class="hover:text-teal-600 transition">Team</a>
-              <a href="#rezensionen" class="hover:text-teal-600 transition">Rezensionen</a>
-              <a href="#kontakt"     class="hover:text-teal-600 transition">Kontakt</a>
-            </div>
-          </div>
-
-          <!-- Right spacer (keeps menu centred) -->
-          <div class="hidden md:block w-[140px]"></div>
-
-        </div>
-      </nav>
-    </header>
 
     <!-- Hero content -->
-    <div class="relative z-20 w-full">
-      <div class="max-w-7xl mx-auto px-8 pt-20">
-        <div class="grid md:grid-cols-2 gap-12 text-white">
+    <div class="wrap hero-content">
 
-          <div>
-            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              Yade Care
-            </h1>
-            <p class="text-xl md:text-2xl leading-relaxed max-w-xl text-gray-200 mb-8">
-              Individuelle Unterst&#252;tzung von der Grundpflege
-              bis zur hauswirtschaftlichen Versorgung.
-            </p>
-            <a href="#kontakt"
-               class="inline-block bg-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">
-              Jetzt Beratung anfragen
-            </a>
-          </div>
+      <div class="hero-text">
+        <h1 class="hero-title">Yade Care</h1>
+        <p class="hero-subtitle">
+          Individuelle Unterst&uuml;tzung von der Grundpflege
+          bis zur hauswirtschaftlichen Versorgung.
+        </p>
+        <a href="#kontakt" class="btn btn-teal hero-cta">
+          Jetzt Beratung anfragen
+        </a>
+      </div>
 
-          <div class="space-y-6 text-lg hidden md:block">
-            <div class="flex items-center space-x-4">
-              <span class="text-teal-300 text-2xl font-bold">&#10004;</span>
-              <span class="font-semibold">Alle Krankenkassen anerkannt</span>
-            </div>
-            <div class="flex items-center space-x-4">
-              <span class="text-teal-300 text-2xl">&#10004;</span>
-              <span class="font-semibold">Kostenlose Pflegeberatung</span>
-            </div>
-            <div class="flex items-center space-x-4">
-              <span class="text-teal-300 text-2xl">&#10004;</span>
-              <span class="font-semibold">Kurzfristiger Pflegebeginn m&#246;glich</span>
-            </div>
-          </div>
-
+      <div class="hero-features" aria-label="Unsere Vorteile">
+        <div class="hero-feature">
+          <span class="hero-check" aria-hidden="true">&#10004;</span>
+          <span>Alle Krankenkassen anerkannt</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-check" aria-hidden="true">&#10004;</span>
+          <span>Kostenlose Pflegeberatung</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-check" aria-hidden="true">&#10004;</span>
+          <span>Kurzfristiger Pflegebeginn m&ouml;glich</span>
         </div>
       </div>
-    </div>
 
+    </div>
   </section>
 
 
   <!-- ════════════════════════════════════════════════
-       LEISTUNGEN  (services — real images)
+       LEISTUNGEN  (services)
   ════════════════════════════════════════════════ -->
-  <section id="leistungen" class="bg-gray-50 py-20">
-    <div class="max-w-7xl mx-auto px-6">
+  <section id="leistungen">
+    <div class="wrap">
 
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-800">Unsere Leistungen</h2>
-        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Kompetente Pflege zu Hause &ndash; in vertrauter Umgebung
-        </p>
+      <div class="section-hd centered fade-up">
+        <span class="pill">Leistungen</span>
+        <h2>Unsere Leistungen</h2>
+        <p>Kompetente Pflege zu Hause &ndash; in vertrauter Umgebung</p>
       </div>
 
-      <!-- 1 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <img src="assets/img/leistung.jpg" class="rounded-2xl shadow-xl w-full h-[400px] object-cover" alt="Pflege zu Hause">
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 text-teal-700">
-            Kompetente Pflege zu Hause &ndash; in vertrauter Umgebung
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            Der ambulante Pflegedienst YadeCare aus M&#252;nchen bietet Ihnen eine liebevolle und fachkundige Pflege direkt in den eigenen vier W&#228;nden.
-            Unser Ziel ist es, pflegebed&#252;rftigen Menschen ein Leben in ihrer gewohnten Umgebung zu erm&#246;glichen &ndash; mit W&#252;rde, Sicherheit und Geborgenheit.
-            Ganz gleich, ob nach einem Krankenhausaufenthalt, einer Rehabilitationsphase oder aufgrund altersbedingter Einschr&#228;nkungen:
-            Als kompetenter ambulanter Pflegedienst in M&#252;nchen entwickeln wir gemeinsam mit Ihnen individuelle Pflegekonzepte,
-            die optimal auf Ihre pers&#246;nlichen Bed&#252;rfnisse abgestimmt sind.
-          </p>
+      <!-- Row 1: image left, text right -->
+      <div class="leis-row fade-up">
+        <img src="assets/img/leistung.jpg" class="leis-img" alt="Pflege zu Hause" loading="lazy" />
+        <div class="leis-copy">
+          <h3>Kompetente Pflege zu Hause &ndash; in vertrauter Umgebung</h3>
+          <p>Der ambulante Pflegedienst YadeCare aus M&uuml;nchen bietet Ihnen eine liebevolle und fachkundige Pflege
+            direkt in den eigenen vier W&auml;nden. Unser Ziel ist es, pflegebed&uuml;rftigen Menschen ein Leben in ihrer
+            gewohnten Umgebung zu erm&ouml;glichen &ndash; mit W&uuml;rde, Sicherheit und Geborgenheit. Ganz gleich,
+            ob nach einem Krankenhausaufenthalt, einer Rehabilitationsphase oder aufgrund altersbedingter
+            Einschr&auml;nkungen: Als kompetenter ambulanter Pflegedienst in M&uuml;nchen entwickeln wir gemeinsam
+            mit Ihnen individuelle Pflegekonzepte, die optimal auf Ihre pers&ouml;nlichen Bed&uuml;rfnisse
+            abgestimmt sind.</p>
         </div>
       </div>
 
-      <!-- 2 reversed -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-        <div class="order-2 md:order-1">
-          <h3 class="text-2xl font-semibold mb-4 text-teal-700">
-            Pers&#246;nlich, Vertrauensvoll und Professionell.
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            Als Gast in Ihrem Zuhause legen wir gr&#246;&#223;ten Wert auf Respekt und den Schutz Ihrer Privatsph&#228;re. Unser Anliegen ist es, eine vertrauensvolle Atmosph&#228;re zu schaffen, in der Sie sich rundum wohlf&#252;hlen k&#246;nnen.
-            Dar&#252;ber hinaus bieten wir Ihnen durch unser erfahrenes Fachpersonal einen kostenfreien und umfangreichen Service an:
-            Neben der pflegerischen Versorgung &#252;bernehmen wir auf Wunsch auch s&#228;mtliche organisatorischen Aufgaben &ndash; von der Kommunikation mit &#196;mtern und Pflegekassen bis hin zur Abwicklung mit Krankenkassen oder anderen Beh&#246;rden.
-            So stellen wir als ambulanter Pflegedienst M&#252;nchen YadeCare sicher, dass Sie oder Ihre Angeh&#246;rigen eine ganzheitliche Betreuung und bestm&#246;gliche Pflege in jeder Hinsicht erhalten.
-          </p>
-        </div>
-        <img src="assets/img/leis3.jpeg" class="order-1 md:order-2 rounded-2xl shadow-xl w-full h-[400px] object-cover" alt="Vertrauensvolle Pflege">
-      </div>
-
-      <!-- 3 -->
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <img src="assets/img/leist2.jpg" class="rounded-2xl shadow-xl w-full h-[400px] object-cover" alt="Pflege mit Herz">
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 text-teal-700">
-            Pflege ist nicht nur eine Pflicht, sie ist ein Teil von uns.
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            Bei Ambulanter Pflegedienst YadeCare verstehen wir Pflege nicht nur als Verpflichtung, sondern als einen wesentlichen Bestandteil unseres t&#228;glichen Handelns.
-            Unsere Arbeit ist gepr&#228;gt von Empathie, Respekt und fachlicher Kompetenz, mit dem Ziel, jedem einzelnen Klienten die bestm&#246;gliche Betreuung zu bieten.
-            Wir nehmen uns Zeit, um die individuellen Bed&#252;rfnisse und Lebenssituationen unserer Patientinnen und Patienten genau zu verstehen.
-            So k&#246;nnen wir eine Pflege gew&#228;hrleisten, die nicht nur professionell, sondern auch menschlich und pers&#246;nlich ist.
-          </p>
+      <!-- Row 2: text left, image right -->
+      <div class="leis-row leis-row--rev fade-up">
+        <img src="assets/img/leis3.jpeg" class="leis-img" alt="Vertrauensvolle Pflege" loading="lazy" />
+        <div class="leis-copy">
+          <h3>Pers&ouml;nlich, Vertrauensvoll und Professionell.</h3>
+          <p>Als Gast in Ihrem Zuhause legen wir gr&ouml;&szlig;ten Wert auf Respekt und den Schutz Ihrer
+            Privatsph&auml;re. Unser Anliegen ist es, eine vertrauensvolle Atmosph&auml;re zu schaffen, in der Sie sich
+            rundum wohlf&uuml;hlen k&ouml;nnen. Dar&uuml;ber hinaus bieten wir Ihnen durch unser erfahrenes Fachpersonal
+            einen kostenfreien und umfangreichen Service an: Neben der pflegerischen Versorgung &uuml;bernehmen wir auf
+            Wunsch auch s&auml;mtliche organisatorischen Aufgaben &ndash; von der Kommunikation mit &Auml;mtern und
+            Pflegekassen bis hin zur Abwicklung mit Krankenkassen oder anderen Beh&ouml;rden.</p>
         </div>
       </div>
 
-      <!-- 4 reversed -->
-      <div class="grid md:grid-cols-2 gap-12 items-center mt-20 mb-20">
-        <div class="order-2 md:order-1">
-          <h3 class="text-2xl font-semibold mb-4 text-teal-700">
-            Kostenlose Pflegeberatung sowie Beratung gem&#228;&#223; &sect; 37 SGB V
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            Gegenstand des Unternehmens ist der Betrieb eines ambulanten Pflegedienstes.
-            Die Gesellschaft erbringt Leistungen der h&#228;uslichen Krankenpflege gem&#228;&#223; &sect; 37 SGB V,
-            Pflegeleistungen nach dem SGB XI, 24-Stunden-Pflege und -Betreuung im h&#228;uslichen Umfeld,
-            Betreuungs- und Entlastungsleistungen, hauswirtschaftliche Versorgung sowie Assistenz- und Unterst&#252;tzungsleistungen f&#252;r hilfs- und pflegebed&#252;rftige Personen.
-            Dar&#252;ber hinaus bietet die Gesellschaft Beratungsleistungen f&#252;r Pflegebed&#252;rftige und deren Angeh&#246;rige an.
-          </p>
+      <!-- Row 3: image left, text right -->
+      <div class="leis-row fade-up">
+        <img src="assets/img/leist2.jpg" class="leis-img" alt="Pflege mit Herz" loading="lazy" />
+        <div class="leis-copy">
+          <h3>Pflege ist nicht nur eine Pflicht, sie ist ein Teil von uns.</h3>
+          <p>Bei Ambulanter Pflegedienst YadeCare verstehen wir Pflege nicht nur als Verpflichtung, sondern als einen
+            wesentlichen Bestandteil unseres t&auml;glichen Handelns. Unsere Arbeit ist gepr&auml;gt von Empathie,
+            Respekt und fachlicher Kompetenz, mit dem Ziel, jedem einzelnen Klienten die bestm&ouml;gliche Betreuung
+            zu bieten. Wir nehmen uns Zeit, um die individuellen Bed&uuml;rfnisse und Lebenssituationen unserer
+            Patientinnen und Patienten genau zu verstehen. So k&ouml;nnen wir eine Pflege gew&auml;hrleisten,
+            die nicht nur professionell, sondern auch menschlich und pers&ouml;nlich ist.</p>
         </div>
-        <img src="assets/img/leis4.jpg" class="order-1 md:order-2 rounded-2xl shadow-xl w-full h-[400px] object-cover" alt="Pflegeberatung">
+      </div>
+
+      <!-- Row 4: text left, image right -->
+      <div class="leis-row leis-row--rev fade-up">
+        <img src="assets/img/leis4.jpg" class="leis-img" alt="Pflegeberatung" loading="lazy" />
+        <div class="leis-copy">
+          <h3>Kostenlose Pflegeberatung sowie Beratung gem&auml;&szlig; &sect;&nbsp;37 SGB V</h3>
+          <p>Gegenstand des Unternehmens ist der Betrieb eines ambulanten Pflegedienstes.
+            Die Gesellschaft erbringt Leistungen der h&auml;uslichen Krankenpflege gem&auml;&szlig; &sect; 37 SGB V,
+            Pflegeleistungen nach dem SGB XI, 24-Stunden-Pflege und -Betreuung im h&auml;uslichen Umfeld,
+            Betreuungs- und Entlastungsleistungen, hauswirtschaftliche Versorgung sowie Assistenz- und
+            Unterst&uuml;tzungsleistungen f&uuml;r hilfs- und pflegebed&uuml;rftige Personen.
+            Dar&uuml;ber hinaus bietet die Gesellschaft Beratungsleistungen f&uuml;r Pflegebed&uuml;rftige
+            und deren Angeh&ouml;rige an.</p>
+        </div>
       </div>
 
     </div>
@@ -203,10 +191,14 @@
       <div class="ueber-grid">
 
         <div class="ueber-copy fade-up">
-          <span class="pill">&#220;ber uns</span>
-          <h2>Ihr verl&#228;sslicher Pflegedienst in M&#252;nchen</h2>
-          <p>YadeCare GmbH ist ein ambulanter Pflegedienst mit Sitz in M&#252;nchen, der sich auf die individuelle Betreuung und Unterst&#252;tzung von pflegebed&#252;rftigen Menschen in ihrer gewohnten h&#228;uslichen Umgebung spezialisiert hat.</p>
-          <p>Unser engagiertes Team aus erfahrenen Pflegekr&#228;ften steht Ihnen und Ihren Angeh&#246;rigen mit Fachwissen, Einf&#252;hlungsverm&#246;gen und Herzlichkeit zur Seite. Dabei legen wir gro&#223;en Wert auf eine vertrauensvolle, respektvolle und w&#252;rdevolle Begleitung jedes einzelnen Patienten.</p>
+          <span class="pill">&Uuml;ber uns</span>
+          <h2>Ihr verl&auml;sslicher Pflegedienst in M&uuml;nchen</h2>
+          <p>YadeCare GmbH ist ein ambulanter Pflegedienst mit Sitz in M&uuml;nchen, der sich auf die individuelle
+            Betreuung und Unterst&uuml;tzung von pflegebed&uuml;rftigen Menschen in ihrer gewohnten h&auml;uslichen
+            Umgebung spezialisiert hat.</p>
+          <p>Unser engagiertes Team aus erfahrenen Pflegekr&auml;ften steht Ihnen und Ihren Angeh&ouml;rigen mit
+            Fachwissen, Einf&uuml;hlungsverm&ouml;gen und Herzlichkeit zur Seite. Dabei legen wir gro&szlig;en Wert
+            auf eine vertrauensvolle, respektvolle und w&uuml;rdevolle Begleitung jedes einzelnen Patienten.</p>
 
           <div class="stats-row" id="statsRow">
             <div class="stat-item">
@@ -253,7 +245,7 @@
             <div class="map-ripple" aria-hidden="true"></div>
             <div class="map-ripple" aria-hidden="true"></div>
             <div class="map-dot"    aria-hidden="true"></div>
-            <div class="map-pin-label">M&#252;nchen</div>
+            <div class="map-pin-label">M&uuml;nchen</div>
           </div>
         </div>
 
@@ -269,7 +261,7 @@
             </svg>
           </div>
           <h3>Respekt</h3>
-          <p>Jeder Mensch verdient Achtung und Wertsch&#228;tzung &ndash; unabh&#228;ngig von Alter oder Zustand.</p>
+          <p>Jeder Mensch verdient Achtung und Wertsch&auml;tzung &ndash; unabh&auml;ngig von Alter oder Zustand.</p>
         </div>
         <div class="value-card fade-up d1">
           <div class="val-icon" aria-hidden="true">
@@ -277,8 +269,8 @@
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
           </div>
-          <h3>W&#252;rde</h3>
-          <p>Die W&#252;rde unserer Patienten steht im Mittelpunkt all unseres Handelns und unserer F&#252;rsorge.</p>
+          <h3>W&uuml;rde</h3>
+          <p>Die W&uuml;rde unserer Patienten steht im Mittelpunkt all unseres Handelns und unserer F&uuml;rsorge.</p>
         </div>
         <div class="value-card fade-up d2">
           <div class="val-icon" aria-hidden="true">
@@ -287,7 +279,7 @@
             </svg>
           </div>
           <h3>Vertrauen</h3>
-          <p>Transparenz und Verl&#228;sslichkeit bilden das Fundament unserer Beziehung zu Patienten und Familien.</p>
+          <p>Transparenz und Verl&auml;sslichkeit bilden das Fundament unserer Beziehung zu Patienten und Familien.</p>
         </div>
       </div>
 
@@ -302,8 +294,8 @@
     <div class="wrap">
       <div class="section-hd centered">
         <span class="pill fade-up">Team</span>
-        <h2 class="fade-up d1">Qualifiziert, einf&#252;hlsam und immer f&#252;r Sie da</h2>
-        <p class="fade-up d2">Unser erfahrenes Team aus examinierten Fachkr&#228;ften setzt sich t&#228;glich mit Leidenschaft f&#252;r Ihr Wohlbefinden ein.</p>
+        <h2 class="fade-up d1">Qualifiziert, einf&uuml;hlsam und immer f&uuml;r Sie da</h2>
+        <p class="fade-up d2">Unser erfahrenes Team aus examinierten Fachkr&auml;ften setzt sich t&auml;glich mit Leidenschaft f&uuml;r Ihr Wohlbefinden ein.</p>
       </div>
       <!-- Cards are injected by js/team.js -->
       <div class="team-grid" id="teamGrid"></div>
@@ -330,22 +322,22 @@
               <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
             </div>
-            <span class="md-badge-caption">MD-Pr&#252;fung bestanden</span>
+            <span class="md-badge-caption">MD-Pr&uuml;fung bestanden</span>
           </div>
         </div>
 
         <!-- Copy -->
         <div class="md-copy fade-up d1">
-          <span class="pill">Qualit&#228;tsnachweis</span>
-          <h2>MD-Note&nbsp;1,0 &#8211; Gepr&#252;fte Qualit&#228;t in der Betreuung</h2>
+          <span class="pill">Qualit&auml;tsnachweis</span>
+          <h2>MD-Note&nbsp;1,0 &ndash; Gepr&uuml;fte Qualit&auml;t in der Betreuung</h2>
           <div class="md-meta">
-            <span>18.&nbsp;M&#228;rz&nbsp;2026</span>
+            <span>18.&nbsp;M&auml;rz&nbsp;2026</span>
             <div class="md-meta-dot"></div>
-            <span>M&#252;nchen-Zentrum</span>
+            <span>M&uuml;nchen-Zentrum</span>
           </div>
-          <p>YadeCare hat bei der Pr&#252;fung durch den Medizinischen Dienst (MD) die Bestnote <strong>1,0</strong> erzielt &#8211; die h&#246;chstm&#246;gliche Auszeichnung f&#252;r ambulante Pflegedienste in Bayern. Bewertet wurden Pflegequalit&#228;t, Dokumentation, Hygiene und Kundenzufriedenheit.</p>
-          <p>Das Ergebnis best&#228;tigt, was wir t&#228;glich leben: Pflege, die sich an den Menschen orientiert &#8211; sorgf&#228;ltig, transparent und mit echtem Herz.</p>
-          <div class="md-quote">&#8222;Das Ergebnis unserer MD-Pr&#252;fung &#8211; wir sind stolz auf unser Team und dankbar f&#252;r das Vertrauen unserer Patientinnen und Patienten.&#8220;</div>
+          <p>YadeCare hat bei der Pr&uuml;fung durch den Medizinischen Dienst (MD) die Bestnote <strong>1,0</strong> erzielt &ndash; die h&ouml;chstm&ouml;gliche Auszeichnung f&uuml;r ambulante Pflegedienste in Bayern. Bewertet wurden Pflegequalit&auml;t, Dokumentation, Hygiene und Kundenzufriedenheit.</p>
+          <p>Das Ergebnis best&auml;tigt, was wir t&auml;glich leben: Pflege, die sich an den Menschen orientiert &ndash; sorgf&auml;ltig, transparent und mit echtem Herz.</p>
+          <div class="md-quote">&bdquo;Das Ergebnis unserer MD-Pr&uuml;fung &ndash; wir sind stolz auf unser Team und dankbar f&uuml;r das Vertrauen unserer Patientinnen und Patienten.&ldquo;</div>
         </div>
 
       </div>
@@ -361,7 +353,7 @@
       <div class="rez-hd fade-up">
         <span class="pill">Rezensionen</span>
         <h2>Was unsere Patienten sagen</h2>
-        <p>Echte Erfahrungen von Menschen, denen wir t&#228;glich helfen d&#252;rfen</p>
+        <p>Echte Erfahrungen von Menschen, denen wir t&auml;glich helfen d&uuml;rfen</p>
       </div>
       <!-- Slides and dots are injected by js/carousel.js -->
       <div class="carousel-wrap fade-up d1" id="carouselWrap">
@@ -379,8 +371,8 @@
     <div class="wrap">
       <div class="kontakt-hd">
         <span class="pill fade-up">Kontakt</span>
-        <h2 class="fade-up d1">24h Bereitschaftsdienst &ndash;<br>Sofortige Beratung f&#252;r Pflege &amp; Betreuung</h2>
-        <p class="fade-up d2">Wir sind f&#252;r Sie erreichbar &ndash; ob f&#252;r eine erste Beratung oder einen Notfall.</p>
+        <h2 class="fade-up d1">24h Bereitschaftsdienst &ndash;<br>Sofortige Beratung f&uuml;r Pflege &amp; Betreuung</h2>
+        <p class="fade-up d2">Wir sind f&uuml;r Sie erreichbar &ndash; ob f&uuml;r eine erste Beratung oder einen Notfall.</p>
       </div>
       <div class="kontakt-grid">
 
@@ -417,12 +409,12 @@
             </div>
             <div class="cinfo-text">
               <strong>Standort</strong>
-              <span>M&#252;nchen, Deutschland</span>
+              <span>M&uuml;nchen, Deutschland</span>
             </div>
           </div>
           <div class="box-24">
             <h4>24h Bereitschaftsdienst</h4>
-            <p>Wir sind rund um die Uhr f&#252;r Sie erreichbar. Rufen Sie uns jederzeit an &ndash; auch nachts, an Wochenenden und Feiertagen.</p>
+            <p>Wir sind rund um die Uhr f&uuml;r Sie erreichbar. Rufen Sie uns jederzeit an &ndash; auch nachts, an Wochenenden und Feiertagen.</p>
           </div>
         </div>
 
@@ -432,7 +424,7 @@
           <form id="contactForm" novalidate>
             <div class="form-row">
               <label for="fname">Name *</label>
-              <input type="text" id="fname" name="name" placeholder="Ihr vollst&#228;ndiger Name" required />
+              <input type="text" id="fname" name="name" placeholder="Ihr vollst&auml;ndiger Name" required />
             </div>
             <div class="form-row">
               <label for="femail">E-Mail *</label>
@@ -444,7 +436,7 @@
             </div>
             <div class="form-row">
               <label for="fmsg">Nachricht *</label>
-              <textarea id="fmsg" name="nachricht" placeholder="Wie k&#246;nnen wir Ihnen helfen?" required></textarea>
+              <textarea id="fmsg" name="nachricht" placeholder="Wie k&ouml;nnen wir Ihnen helfen?" required></textarea>
             </div>
             <button type="submit" class="btn btn-teal">
               Nachricht absenden
@@ -479,13 +471,13 @@
             </div>
             YadeCare
           </a>
-          <p>Ihr ambulanter Pflegedienst in M&#252;nchen. Professionell, herzlich und immer f&#252;r Sie da &ndash; Tag und Nacht.</p>
+          <p>Ihr ambulanter Pflegedienst in M&uuml;nchen. Professionell, herzlich und immer f&uuml;r Sie da &ndash; Tag und Nacht.</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
           <a href="#home">Start</a>
           <a href="#leistungen">Leistungen</a>
-          <a href="#ueber-uns">&#220;ber uns</a>
+          <a href="#ueber-uns">&Uuml;ber uns</a>
           <a href="#team">Team</a>
           <a href="#rezensionen">Rezensionen</a>
           <a href="#kontakt">Kontakt</a>
@@ -494,11 +486,11 @@
           <h4>Kontakt</h4>
           <a href="tel:+498945151550">089 / 45 15 15 50</a>
           <a href="mailto:info@yadecare.de">info@yadecare.de</a>
-          <span>M&#252;nchen, Deutschland</span>
+          <span>M&uuml;nchen, Deutschland</span>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&#169; 2025 YadeCare GmbH &middot; M&#252;nchen</span>
+        <span>&#169; 2026 YadeCare GmbH &middot; M&uuml;nchen</span>
         <div class="footer-legal">
           <a href="#">Impressum</a>
           <a href="#">Datenschutz</a>
